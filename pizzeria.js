@@ -1,6 +1,5 @@
 conect = new Mongo("localhost");
 db = conect.getDB("pizzeria");
-
 db.createCollection("persona");
 db.createCollection("producto");
 db.createCollection("venta");
@@ -99,3 +98,25 @@ db.producto.insert(
     tipo: [{ clase: "bebida" }],
   }
 );
+
+db.venta.insert({
+  date: new Date(),
+  productos: [{ producto_id: 1 }, { cantidad: 2 }],
+  persona: [{ tipo: "empleado" }, { persona_id: 4 }],
+  tienda: {
+    info: {
+      nombre: "pizzeria-2",
+      contacto: {
+        calle: "mayor",
+        numero: 5,
+        piso: 2,
+        puerta: "a",
+        ciudad: "Madrid",
+        codigo_postal: 28013,
+        pais: "España",
+        telefono: 915822635,
+      },
+    },
+    pizzeria_id: 1,
+  },
+});

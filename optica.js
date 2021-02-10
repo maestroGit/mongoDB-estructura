@@ -1,20 +1,3 @@
-// databases
-// collections
-// documents
-// db.help()
-// dropDatabase()
-// db.persona.find()
-// db.persona.find().pretty()
-// db.provedor.find({name:'Dell'})
-// db.persona.update({'provedor':'GafasGuay'},{$set:{'description:'gafas bonitas'}})
-// db.persona.update({'provedor':'NuevoProveedor'},{$set:{'description:'gafas feas'}},{upsert:true})
-// db.persona.remove({name:'Dell'})
-// operador $gt (abreviatura de “greater than”
-// db.restaurants.count()
-// db.restaurants.find().forEach(restaurant => print("Nombre Restaurante :"+restaurant.name)) //don't work
-// operation sorts the documents first by the age field in descending order and then by the posts field in ascending order:
-// db.users.find({ }).sort( { age : -1, posts: 1 } )
-
 conect = new Mongo("localhost");
 db = conect.getDB('optica');
 
@@ -124,13 +107,6 @@ db.producto.insert(
 db.venta.insert({
   date: new Date(),
   productos: [{ producto_id: 1 }, { cantidad: 2 }],
-  persona: [{ tipo: "empleado" }, { persona_id: 4 }],
-  tienda:{info:{ nombre: "pizzeria-2",
-    contacto: {calle: "mayor", numero: 5, piso: 2, puerta: "a",
-    ciudad: "Madrid",
-    codigo_postal: 28013,
-    pais: "España",
-    telefono:915822635}},
-    pizzeria_id:1},
+  persona: [{ tipo: "empleado" }, { persona_id: 1 }],
 });
 
